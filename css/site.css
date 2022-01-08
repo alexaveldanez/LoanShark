@@ -72,3 +72,16 @@ main>.container {
     bottom: 0;
     width: 100%;
 }
+
+.loanSharkLogo {
+    margin-top: 100px;
+}
+
+.formSection {
+    background-color: lightgrey;
+    padding: 20px;
+}
+
+.resultsSection {
+    margin-top: 75px;
+}

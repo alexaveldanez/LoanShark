@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Alex Aveldanez</title>
+    <title>Loan Shark: A Coding Project By Alex Aveldanez</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
     <!-- NAV SECTION -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/aPlusLogo_Main.png" height="35">APP NAME</a>
+            <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/aPlusLogo_Main.png" height="35"> Loan Shark</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,7 +50,57 @@
     </nav>
     <!-- MAIN SECTION -->
     <main class="flex-shrink-0">
-            <div class="container"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 pt-3">
+                        <h2>Loan Calculator</h2>
+                        <form class="form-group formSection">
+    
+                            <label for="loanAmount">Loan Amount</label>
+                            <input id="loanAmount" class="form-control" type="number" placeholder="15000">
+    
+                            <label for="termMonths">Term (Months)</label>
+                            <input id="termMonths" class="form-control" type="number" placeholder="60">
+    
+                            <label for="interestRate">Interest Rate</label>
+                            <input id="interestRate" class="form-control" type="number" placeholder="3">
+    
+                            <div id="" class="d-flex justify-content-end mt-3">
+                                <button class="btn btn-outline-primary">Calculate</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 text-center d-flex flex-column justify-content-center">
+                                <div class="resultsSection">
+                                    <p class="fst-italic">Your Monthly Payments</p>
+                                    <h1 class="display-3 text-black fw-bold">$269.53</h1>
+                                </div>
+                            </div>
+                            <div class="col-6 text-center d-flex flex-column align-items-start">
+                                <span>Total Principal</span>
+                                <span>Total Interest</span>
+                                <span>Total Cost</span>
+                            </div>
+                            <div class="col-6 text-center d-flex flex-column align-items-start">
+                                <span id="totalPrincipal">$15,000</span>
+                                <span id="totalInterest">$1,171.82</span>
+                                <span id="totalCost"><strong>$16,171.82</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tbody id="tableResults">
+                                    <!-- Table results go here. -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </main>
     <!-- FOOTER SECTION -->
     <footer class="footer mt-auto py-3">
