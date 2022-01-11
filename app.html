@@ -57,16 +57,16 @@
                         <form class="form-group formSection">
     
                             <label for="loanAmount">Loan Amount</label>
-                            <input id="loanAmount" class="form-control" type="number" placeholder="15000">
+                            <input id="loanAmount" class="form-control" type="number" placeholder="$">
     
                             <label for="termMonths">Term (Months)</label>
-                            <input id="termMonths" class="form-control" type="number" placeholder="60">
+                            <input id="termMonths" class="form-control" type="number" placeholder="0">
     
                             <label for="interestRate">Interest Rate</label>
-                            <input id="interestRate" class="form-control" type="number" placeholder="3">
+                            <input id="interestRate" class="form-control" type="number" placeholder="%">
     
-                            <div id="" class="d-flex justify-content-end mt-3">
-                                <button class="btn btn-outline-primary">Calculate</button>
+                            <div class="d-flex justify-content-end mt-3">
+                                <button id="btnCalculate" class="btn btn-outline-primary" type="button">Calculate</button>
                             </div>
                         </form>
                     </div>
@@ -75,7 +75,7 @@
                             <div class="col-12 text-center d-flex flex-column justify-content-center">
                                 <div class="resultsSection">
                                     <p class="fst-italic">Your Monthly Payments</p>
-                                    <h1 class="display-3 text-black fw-bold">$269.53</h1>
+                                    <h1 id="monthlyPayment" class="display-3 text-black fw-bold">$0.00</h1>
                                 </div>
                             </div>
                             <div class="col-6 text-center d-flex flex-column align-items-start">
@@ -84,15 +84,25 @@
                                 <span>Total Cost</span>
                             </div>
                             <div class="col-6 text-center d-flex flex-column align-items-start">
-                                <span id="totalPrincipal">$15,000</span>
-                                <span id="totalInterest">$1,171.82</span>
-                                <span id="totalCost"><strong>$16,171.82</strong></span>
+                                <span id="totalPrincipal">$0.00</span>
+                                <span id="totalInterest">$0.00</span>
+                                <span><strong id="totalCost">$0.00</strong></span>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped invisible" id="mainTable">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Payment</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Total Interest</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
                                 <tbody id="tableResults">
                                     <!-- Table results go here. -->
                                 </tbody>
@@ -129,6 +139,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script>
+    <script>
+        document.getElementById("btnCalculate").addEventListener("click", getValues);
+    </script>
 </body>
 
 </html>
